@@ -1,0 +1,365 @@
+$color: #262646;
+$bg-gray: rgba(222, 222, 222, 0.1);
+%projects {
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+%white-dot {
+  position: absolute;
+  box-shadow: 0 0 0 4px $color;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-bottom: 50px;
+  margin-left: 260px;
+  width: 15px;
+  height: 15px;
+}
+%check-base {
+  margin-top: 2px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+%status {
+  padding: 3px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  width: 100px;
+  text-align: center;
+}
+%tick {
+  width: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+body {
+  color: white;
+  padding: 0;
+  margin: 0;
+  background-color: $color;
+  font-family: Rubik;
+}
+.container {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  .left-side {
+    grid-area: left;
+    margin-bottom: 30px;
+    .menu {
+      margin-top: 10px;
+      margin-left: 10px;
+      img {
+        padding: 2px 5px;
+        width: 30px;
+        background-color: $bg-gray;
+        border-radius: 7px;
+      }
+    }
+    .main {
+      display: flex;
+      align-items: center;
+      .inside-main {
+        width: 100%;
+        p {
+          color: white;
+        }
+        span {
+          color: gray;
+        }
+        .search {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          background-color: $bg-gray;
+          padding: 10px;
+          border-radius: 15px;
+          img {
+            width: 20px;
+            margin-right: 10px;
+          }
+          input {
+            background-color: transparent;
+            border: none;
+            width: 250px;
+            &:focus {
+              outline: none !important;
+            }
+          }
+          ::placeholder {
+            color: white;
+            font-size: 14px;
+          }
+        }
+        .projects {
+          margin-top: 30px;
+          text-align: center;
+          .item-one {
+            .item1 {
+              @extend %projects;
+              background-color: #ff0083;
+              background-image: linear-gradient(to top right, #ff0083, #ff00c5);
+            }
+          }
+          .item-two {
+            .item2 {
+              @extend %projects;
+              box-shadow: 0 0 0 6px $color, 0 0 0 9px #00e2a5;
+              background-color: #00e2a5;
+              background-image: linear-gradient(to top right, #00e2a5, #4c4de6);
+            }
+          }
+          .item-three {
+            .item3 {
+              @extend %projects;
+              background-color: #ca1fd7;
+              background-image: linear-gradient(to top right, #ca1fd7, #7400bc);
+              position: relative;
+              .white-dot {
+                @extend %white-dot;
+              }
+            }
+          }
+          .item-four {
+            .item4 {
+              @extend %projects;
+              background-color: #8800ec;
+              background-image: linear-gradient(to top right, #8800ec, #11a8f1);
+            }
+          }
+          .item-five {
+            .item5 {
+              @extend %projects;
+              background-color: #fac068;
+              background-image: linear-gradient(to top right, #fac068, #f55b5b);
+
+              position: relative;
+              .white-dot {
+                @extend %white-dot;
+              }
+            }
+          }
+          .item-six {
+            .item6 {
+              @extend %projects;
+              background-color: #3b3a53;
+              background-image: linear-gradient(to top right, #3b3a53, #3b3b53);
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-side {
+    margin: 0 0 10px 0;
+    padding: 10px 20px 20px 20px;
+    grid-area: right;
+    color: $color;
+    background-color: white;
+    border-radius: 20px;
+    .plus {
+      background-color: purple;
+      width: 35px;
+      height: 35px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      margin-left: 200px;
+      margin-bottom: 0;
+      margin-right: 0;
+      box-shadow: 2px 2px 7px purple;
+      button {
+        font-size: 20px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        &:focus {
+          outline: none !important;
+        }
+      }
+    }
+    .top {
+      display: block;
+      p {
+        font-size: 14px;
+      }
+      .image {
+        display: flex;
+        align-items: center;
+        img {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+          box-shadow: 0 0 0 4px white;
+          #pict-one {
+            position: absolute;
+          }
+          #pict-two {
+            position: absolute;
+          }
+          #pict-three {
+            position: absolute;
+          }
+        }
+        span {
+          margin-left: 10px;
+          border: 2px solid gray;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+    }
+    .check {
+      @extend %check-base;
+      .check1 {
+        display: flex;
+        align-items: center;
+        img {
+          @extend %tick;
+          background-color: aquamarine;
+          border: 1px solid white;
+        }
+      }
+      p {
+        @extend %status;
+        background-color: #ddf4f8;
+        color: #7dd2ce;
+      }
+    }
+    .checktwo {
+      @extend %check-base;
+      .check2 {
+        display: flex;
+        align-items: center;
+        img {
+          @extend %tick;
+          background-color: aquamarine;
+          border: 1px solid white;
+        }
+      }
+      p {
+        @extend %status;
+        background-color: #deeefd;
+        color: #9ab8d8;
+      }
+    }
+    .checkthree {
+      @extend %check-base;
+      .check3 {
+        display: flex;
+        align-items: center;
+        img {
+          @extend %tick;
+          background-color: white;
+          border: 1px solid gray;
+        }
+      }
+      p {
+        @extend %status;
+        background-color: #feeee5;
+        color: #e6baa8;
+      }
+    }
+    .checkfour {
+      @extend %check-base;
+      .check4 {
+        display: flex;
+        align-items: center;
+        img {
+          @extend %tick;
+          background-color: white;
+          border: 1px solid gray;
+        }
+      }
+      p {
+        @extend %status;
+        background-color: #d5d2d7;
+        color: #aeb1b9;
+      }
+    }
+    p,
+    span {
+      color: gray;
+    }
+  }
+}
+@media (min-width: 768px) {
+  %check-base {
+    margin-bottom: 0;
+  }
+  %white-dot {
+    margin-bottom: 50px;
+    margin-left: 190px;
+  }
+  .container {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+    }
+    .right-side {
+      padding: 10px 50px;
+      .top {
+        display: flex;
+      }
+      .plus {
+        margin-top: 30px;
+        margin-left: 600px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  %projects {
+    height: 100px;
+  }
+  %white-dot {
+    margin-bottom: 90px;
+    margin-left: 110px;
+  }
+  .container {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    .left-side {
+      .main {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+    }
+    .right-side {
+      margin: 10px;
+      .plus {
+        margin-top: 30px;
+        margin-left: 490px;
+      }
+    }
+  }
+}
